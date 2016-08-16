@@ -8,14 +8,10 @@ $(function() {
     type: 'GET',
     dataType: 'JSON',
     crossDomain: true,
-    beforeSend: function(xhr) {
-      $loader.show();
-    },
   }).done(successFunction)
     .fail(failFunction);
 
     function successFunction(data){
-      $loader.hide();
       $name.text("Name: " + data.name);
     }
 
