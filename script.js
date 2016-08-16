@@ -12,9 +12,9 @@ $(function() {
     .fail(failFunction);
 
     function successFunction(data){
-      $name.text("Name: " + data.name);
-      $(data.age).appendTo($age);
-      $(data.email).appendTo($email);
+      $name.text(data.name);
+      $age.text(data.age);
+      $email.text(data.email);
     }
 
     function failFunction(request, textStatus, errorThrown) {
