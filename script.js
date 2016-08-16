@@ -7,6 +7,7 @@ $(function() {
     url:'https://guarded-mountain-34245.herokuapp.com/',
     type: 'GET',
     dataType: 'JSON',
+    crossDomain: true,
     beforeSend: function(xhr) {
       $loader.show();
     },
@@ -15,13 +16,12 @@ $(function() {
 
     function successFunction(data){
       $loader.hide();
-      $(data.name).appendTo($name);
-      $(data.age).appendTo($age);
-      $(data.email).appendTo($email);
+      $name.text("Name: " + data.name);
     }
 
     function failFunction(request, textStatus, errorThrown) {
       $name.html('An error occurred during your request: ' + request.status + ' ' + textStatus + ' ' + errorThrown);
+      console.log(errorThrown);
     }
 
 });
