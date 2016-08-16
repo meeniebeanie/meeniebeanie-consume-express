@@ -13,8 +13,8 @@ $(function() {
 
     function successFunction(data){
       $name.text("Name: " + data.name);
-      $(data.age)appendTo($age);
-      $(data.email)appendTo($email);
+      $(data.age).appendTo($age);
+      $(data.email).appendTo($email);
     }
 
     function failFunction(request, textStatus, errorThrown) {
