@@ -2,6 +2,7 @@ $(function() {
   var $name = $('#name');
   var $age = $('#age');
   var $email = $('#email');
+  var $about_me = $('#about_me');
 
   $.ajax({
     url:'https://guarded-mountain-34245.herokuapp.com/',
@@ -15,6 +16,7 @@ $(function() {
       $name.text(data.name);
       $age.text(data.age);
       $email.text(data.email);
+      $about_me.text(data.about_me);
     }
 
     function failFunction(request, textStatus, errorThrown) {
